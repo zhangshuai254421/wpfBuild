@@ -51,7 +51,8 @@ jobs:
 
     strategy:
       matrix:
-    #    configuration: [Debug, Release]
+        configuration: [Debug, Release]
+        Platform: [x86, x64]
         dotnet-version: [ '8.0.100-preview.3.23178.7', '8.0.0-preview.5.23212.1' ]
 
     runs-on: windows-latest  # For a list of available runner types, refer to
@@ -72,8 +73,8 @@ jobs:
     # Install the .NET Core workload
     - name: Install .NET Core
       uses: actions/setup-dotnet@v3
-      with:
-          dotnet-version: ${{ matrix.dotnet-version }}
+      #with:
+      #    dotnet-version: ${{ matrix.dotnet-version }}
      
     - name: Install Nuget
       uses: nuget/setup-nuget@v1
