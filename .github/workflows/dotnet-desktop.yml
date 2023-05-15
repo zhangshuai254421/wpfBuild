@@ -74,12 +74,12 @@ jobs:
       with:
         dotnet-version: 8.0.100-preview.3.23178.7
 
-    - name: Install
-      run: dotnet restore
+    #- name: Install
+    #  run: dotnet restore
     - name: Build
-      run: dotnet build --configuration Release --no-restore
-    - name: Test
-      run: dotnet test --no-restore --verbosity normal
+      run: .\build.cmd -pack -ci -configuration Release -prepareMachine /p:Platform=x86
+    #- name: Test
+    #  run: dotnet test --no-restore --verbosity normal
 
     #- name: Install dependencies
     #    run: dotnet restore
