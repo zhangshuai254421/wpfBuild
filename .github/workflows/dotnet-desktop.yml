@@ -73,6 +73,10 @@ jobs:
       uses: actions/setup-dotnet@v3
       with:
         dotnet-version: 8.0.100-preview.3.23178.7
+    - name: Install Nuget
+      uses: nuget/setup-nuget@v1
+      with:
+        nuget-version: '5.x'
 
     #- name: Install
     #  run: dotnet restore
